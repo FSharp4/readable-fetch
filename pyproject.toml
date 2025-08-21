@@ -1,0 +1,30 @@
+[project]
+name = "readable-fetch"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "beautifulsoup4>=4.13.4",
+    "markdownify>=1.2.0",
+    "openai>=1.100.2",
+    "playwright>=1.54.0",
+    "pyyaml>=6.0.2",
+    "readability-lxml>=0.8.4.1",
+    "requests>=2.32.5",
+    "tiktoken>=0.11.0",
+    "trafilatura[all]>=2.0.0",
+]
+
+[tool.poetry]
+packages = [
+    { include = "readable_fetch", from = "src" },
+]
+
+[dependency-groups]
+dev = [
+    "isort>=6.0.1",
+    "mypy>=1.17.1",
+    "ruff>=0.12.9",
+    "types-lxml>=2025.3.30",
+]
