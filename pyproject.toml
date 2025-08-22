@@ -6,6 +6,7 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "beautifulsoup4>=4.13.4",
+    "fastapi",
     "markdownify>=1.2.0",
     "openai>=1.100.2",
     "playwright>=1.54.0",
@@ -14,6 +15,7 @@ dependencies = [
     "requests>=2.32.5",
     "tiktoken>=0.11.0",
     "trafilatura[all]>=2.0.0",
+    "uvicorn",
 ]
 
 [tool.poetry]
@@ -21,10 +23,14 @@ packages = [
     { include = "readable_fetch", from = "src" },
 ]
 
+[tool.poetry.scripts]
+readable_fetch = "readable_fetch.mcp_server.server:main"
+
 [dependency-groups]
 dev = [
     "isort>=6.0.1",
     "mypy>=1.17.1",
+    "pytest>=8.4.1",
     "ruff>=0.12.9",
     "types-lxml>=2025.3.30",
 ]
